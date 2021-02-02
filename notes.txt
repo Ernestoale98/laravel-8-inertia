@@ -1,0 +1,34 @@
+Inertia es la clase que permite Laravel con de Vue.js
+
+La configuracion de inertia va a rederizar todo lo que este dentro de Pages
+```
+  resolveComponent: (name) => require(`./Pages/${name}`).default
+```
+
+Inertia lo que hace es que monta todo en un super comonente debajo de root
+
+Inertia manda llamar componentes directamente de Vue
+
+Lo que usara Inertia va dentro de la carpeta de seleccion de componentes lo ya los demas componentes de
+Vue pueden ir en cualquier parte dentro de js
+
+
+Laravel le pasa las rutas a vue atraves de ziggy
+
+El ciclo de Inertia es:
+Pasar las rutas de Laravel a Vue
+Luego en ep app.js se tiene que rutas van a ser montadas dependiento de la ruta
+Ruta
+Controllador
+Retorna que componente Vue mostrar y sus props
+
+Inertia Link es el componente que se debe usar para las rutas que regresen un componente de Vue
+y sigues usando el el objeto route como si se siguira en un archivo de php ademas que es un boton solo faltan sus clases
+
+Inertia tiene methods para hacer peticiones y solo le pasas la ruta de ziggy
+
+this.$inertia.put();
+
+Flash Message
+Inertia tiene una propiedad para que php emita un message atraves de un canal y poder atraparlo en vue
+Se configura en el appserviceprovider y necesita inertia y session
